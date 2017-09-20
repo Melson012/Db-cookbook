@@ -27,7 +27,7 @@ end
 template '/lib/systemd/system/mongod.service' do
 	source 'mongod.service.erb'
 end
-service 'mongodb' do 
+service 'mongod' do 
 	supports status: true, restart: true
 	action [:enable, :start]	
 end
