@@ -5,7 +5,6 @@
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
 
-apt_update
 
 
 apt_repository 'mongodb-org' do 
@@ -15,6 +14,8 @@ apt_repository 'mongodb-org' do
   keyserver "hkp://keyserver.ubuntu.com:80"
   key "EA312927"
 end
+
+apt_update
 
 package'mongodb' 
 
