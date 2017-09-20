@@ -3,21 +3,22 @@
 # Recipe:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
+
+
 apt_update
 
-package 'mongodb'
+packet'mongodb' 
 
 service 'mongodb' do 
-	supports status: true, restart: true, reload: true
+	supports status: true, restart: true
 	action [:enable, :start]	
 end
 
 template '/etc/mongod.conf' do
 	source 'mongod.conf.erb'
-	notifies :reload, "service[mongodb]"
+	
 end
 
 template '/lib/systemd/system/mongod.service' do
 	source 'mongod.service.erb'
-	
 end
